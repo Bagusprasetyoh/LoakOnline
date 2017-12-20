@@ -3,36 +3,28 @@ package com.example.huthut.loakonline;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.huthut.loakonline.helper.AppConfig;
-import com.example.huthut.loakonline.helper.AppController;
 import com.example.huthut.loakonline.helper.SQLiteHandler;
 import com.example.huthut.loakonline.helper.SessionManager;
-import com.example.huthut.loakonline.helper.Status;
+import com.example.huthut.loakonline.Class.Status;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -72,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         // Check if user is already logged in or not
         if (session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, DaftarBarangActivity.class);
             startActivity(intent);
             finish();
         }
@@ -80,6 +72,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pDialog.setMessage("Logging in ...");
+                showDialog();
                 final String username = inputUsername.getText().toString();
                 final String password = inputPassword.getText().toString();
                 final Status status = (Status) spinner.getSelectedItem();
@@ -92,15 +86,22 @@ public class LoginActivity extends AppCompatActivity {
                     Response.Listener<String> responseListener = new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
+                            hideDialog();
                             boolean error = false;
                             try {
                                 JSONObject json = new JSONObject(response);
                                 error = json.getBoolean("error");
 
                                 if (!error) {
-                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    JSONObject user = json.getJSONObject("user");
+                                    String id = user.getString("uid");
+                                    String username = user.getString("username");
+
+                                    session.setLogin(true);
+                                    db.addUser(id, username);
+
+                                    Intent intent = new Intent(LoginActivity.this, DaftarBarangActivity.class);
                                     startActivity(intent);
-                                    Toast.makeText(getApplication(),"berhasil",Toast.LENGTH_SHORT).show();
                                     finish();
 
                                 } else {
@@ -110,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                                //Toast.makeText(getApplication(),"gagal",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplication(),"gagal",Toast.LENGTH_SHORT).show();
                             }
 
                         }

@@ -1,4 +1,4 @@
-package com.example.huthut.loakonline.helper;
+package com.example.huthut.loakonline.Class;
 
 /**
  * Created by Huthut on 12/3/2017.
