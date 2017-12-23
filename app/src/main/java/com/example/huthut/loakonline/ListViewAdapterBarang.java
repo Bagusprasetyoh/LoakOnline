@@ -62,18 +62,23 @@ public class ListViewAdapterBarang extends ArrayAdapter<Barang_loak> {
         textViewItem.setText(loak.getNamaProduk());
         textViewItem.setTag(loak.getId());
 
-        Button hapusButton = (Button) convertView.findViewById(R.id.hapus_button);
-        hapusButton.setOnClickListener(new View.OnClickListener() {
+        TextView harga = (TextView) convertView.findViewById(R.id.harga_textview);
+        harga.setText(String.valueOf(loak.getHargaStandar()));
+
+        final Button hapusButton = (Button) convertView.findViewById(R.id.hapus_button);
+        hapusButton.setTag(loak.getId());
+
+        hapusButton.setOnClickListener(new Button.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                daftar = new DaftarBarangActivity();
-                boolean stat = daftar.hapusBarang(loak.getId());
+            public void onClick(View v) {
+                if(mContext instanceof DaftarBarangActivity){
+                    boolean stat = ((DaftarBarangActivity)mContext).hapusBarang(String.valueOf(v.getTag()));
 
-                if( stat == FALSE ) {
-                    data.remove(position);
-                    notifyDataSetChanged();//refresh adapter
+                    if( stat == FALSE ) {
+                        data.remove(position);
+                        notifyDataSetChanged();//refresh adapter
+                    }
                 }
-
             }
         });
 

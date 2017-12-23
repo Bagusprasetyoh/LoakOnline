@@ -66,12 +66,7 @@ public class KategoriActivity extends AppCompatActivity {
                             Kategori cat = new Kategori(id, kategor);
                             listKategori.add(cat);
                         }
-                        ArrayList<String> lables = new ArrayList<String>();
 
-                        for (int i = 0; i < listKategori.size(); i++) {
-                            lables.add(listKategori.get(i).getNamaKategori());
-
-                        }
                         adapter = new ListViewAdapter(KategoriActivity.this,
                                 R.layout.list_view_row_item,
                                 listKategori);
