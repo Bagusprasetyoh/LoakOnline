@@ -11,6 +11,8 @@ public class AppConfig {
     public static String URL_TAMBAHTRANSAKSI = "http://192.168.48.1/LoakOnline/TambahTransaksi.php";
     public static String URL_DAFTARBARANG = "http://192.168.48.1/LoakOnline/DaftarBarang.php";
     public static String URL_HAPUSBARANG = "http://192.168.48.1/LoakOnline/HapusBarang.php";
+    public static String URL_AMBILJADWAL = "http://192.168.48.1/LoakOnline/AmbilJadwal.php";
+    public static String URL_CARIPENGEPUL = "http://192.168.48.1/LoakOnline/CariPengepul.php";
 
     // Server user register url
     public static String URL_REGISTER = "http://192.168.1.226/pencari-jasa-backend/register.php";
