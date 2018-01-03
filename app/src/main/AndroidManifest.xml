@@ -41,7 +41,9 @@
         <activity android:name=".Pengepul.HomePengepulActivity" />
         <activity android:name=".Pengepul.EditBeratActivity" />
         <activity android:name=".Pengepul.DaftarTransaksiActivity" />
-        <activity android:name=".Pengepul.TambahJadwalActivity"></activity>
+        <activity android:name=".Pengepul.TambahJadwalActivity" />
+        <activity android:name=".Penjual.DetailPengepulActivity" />
+        <activity android:name=".Pengepul.MenuActivity"></activity>
     </application>
 
 </manifest>

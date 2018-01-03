@@ -1,5 +1,6 @@
 package com.example.huthut.loakonline.Penjual;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -7,6 +8,9 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.huthut.loakonline.Class.Pengepul;
+import com.example.huthut.loakonline.Pengepul.DaftarTransaksiActivity;
+import com.example.huthut.loakonline.Pengepul.HomePengepulActivity;
 import com.example.huthut.loakonline.R;
 import com.example.huthut.loakonline.helper.SQLiteHandler;
 
@@ -46,7 +50,19 @@ public class CariActivity extends AppCompatActivity {
                     if (!error){
                         JSONObject result = new JSONObject(response);
                         JSONArray array  = result.getJSONArray("pengepul");
-                        Toast.makeText(CariActivity.this, "Berhasil", Toast.LENGTH_SHORT).show();
+
+                        JSONObject catObj = array.getJSONObject(0);
+                        String nama = catObj.getString("nama_pengepul");
+                        String alamat = catObj.getString("alamat");
+                        String no_telp = catObj.getString("no_telp");
+
+                        Bundle bundle = new Bundle();
+                        bundle.putString("nama", nama);
+                        bundle.putString("alamat", alamat);
+                        bundle.putString("no_telp", no_telp);
+                        Intent intent = new Intent(CariActivity.this, DetailPengepulActivity.class);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
                     }
                 } catch (JSONException e1) {
                     e1.printStackTrace();

@@ -18,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.huthut.loakonline.Pengepul.DaftarTransaksiActivity;
 import com.example.huthut.loakonline.Pengepul.HomePengepulActivity;
+import com.example.huthut.loakonline.Pengepul.MenuActivity;
 import com.example.huthut.loakonline.R;
 import com.example.huthut.loakonline.helper.SQLiteHandler;
 import com.example.huthut.loakonline.helper.SessionManager;
@@ -109,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                                         startActivity(intent);
                                         finish();
                                     }else if(Integer.parseInt(status) == 2){
-                                        Intent intent = new Intent(LoginActivity.this, DaftarTransaksiActivity.class);
+                                        Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                                         startActivity(intent);
                                         finish();
                                     }

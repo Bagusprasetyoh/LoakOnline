@@ -46,6 +46,14 @@ public class Transaksi {
         return id_transaksi;
     }
 
+    public String getNama_penjual(){
+        return nama_penjual;
+    }
+
+    public String getNo_telp(){
+        return no_telp;
+    }
+
     public String getAlamat(){
         return alamat;
     }
@@ -55,14 +63,6 @@ public class Transaksi {
     }
 
     public String getJadwal_order(){return jadwal_order;}
-
-    public String getNama_penjual(){
-        return nama_penjual;
-    }
-
-    public String getNo_telp(){
-        return no_telp;
-    }
 
     public String getJambuka(){
         return jam_buka;
