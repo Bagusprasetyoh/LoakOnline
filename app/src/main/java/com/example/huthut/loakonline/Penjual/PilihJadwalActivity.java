@@ -1,6 +1,5 @@
-package com.example.huthut.loakonline;
+package com.example.huthut.loakonline.Penjual;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -24,7 +23,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.huthut.loakonline.Class.Jadwal;
-import com.example.huthut.loakonline.Class.Kategori;
+import com.example.huthut.loakonline.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;

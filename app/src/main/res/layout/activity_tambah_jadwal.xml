@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.huthut.loakonline.Penjual.CariActivity">
+    tools:context="com.example.huthut.loakonline.Pengepul.TambahJadwalActivity">
 
 </android.support.constraint.ConstraintLayout>

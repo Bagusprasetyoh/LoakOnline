@@ -1,4 +1,4 @@
-package com.example.huthut.loakonline;
+package com.example.huthut.loakonline.Penjual;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.huthut.loakonline.Class.Jadwal;
+import com.example.huthut.loakonline.R;
 
 import java.util.List;
 

@@ -1,21 +1,19 @@
-package com.example.huthut.loakonline;
+package com.example.huthut.loakonline.Penjual;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.huthut.loakonline.Class.Barang_loak;
-import com.example.huthut.loakonline.Class.Status;
+import com.example.huthut.loakonline.R;
 import com.example.huthut.loakonline.helper.SQLiteHandler;
 
 import org.json.JSONArray;

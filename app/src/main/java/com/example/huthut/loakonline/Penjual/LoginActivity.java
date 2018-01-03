@@ -1,4 +1,4 @@
-package com.example.huthut.loakonline;
+package com.example.huthut.loakonline.Penjual;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -16,6 +16,9 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.huthut.loakonline.Pengepul.DaftarTransaksiActivity;
+import com.example.huthut.loakonline.Pengepul.HomePengepulActivity;
+import com.example.huthut.loakonline.R;
 import com.example.huthut.loakonline.helper.SQLiteHandler;
 import com.example.huthut.loakonline.helper.SessionManager;
 import com.example.huthut.loakonline.Class.Status;
@@ -24,7 +27,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -62,12 +64,12 @@ public class LoginActivity extends AppCompatActivity {
         session = new SessionManager(getApplicationContext());
 
         // Check if user is already logged in or not
-        if (session.isLoggedIn()) {
+        /*if (session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
             Intent intent = new Intent(LoginActivity.this, DaftarBarangActivity.class);
             startActivity(intent);
             finish();
-        }
+        }*/
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,13 +98,21 @@ public class LoginActivity extends AppCompatActivity {
                                     JSONObject user = json.getJSONObject("user");
                                     String id = user.getString("uid");
                                     String username = user.getString("username");
+                                    String status = user.getString("status");
 
+                                    db.deleteUsers();
                                     session.setLogin(true);
                                     db.addUser(id, username);
 
-                                    Intent intent = new Intent(LoginActivity.this, DaftarBarangActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                    if(Integer.parseInt(status) == 1){
+                                        Intent intent = new Intent(LoginActivity.this, DaftarBarangActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }else if(Integer.parseInt(status) == 2){
+                                        Intent intent = new Intent(LoginActivity.this, DaftarTransaksiActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
 
                                 } else {
                                     builder.setMessage("Gagal");
@@ -113,7 +123,6 @@ public class LoginActivity extends AppCompatActivity {
                                 e.printStackTrace();
                                 Toast.makeText(getApplication(),"gagal",Toast.LENGTH_SHORT).show();
                             }
-
                         }
                     };
 

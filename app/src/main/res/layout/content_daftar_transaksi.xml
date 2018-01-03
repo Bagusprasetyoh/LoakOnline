@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.huthut.loakonline.Penjual.KategoriActivity"
-    tools:showIn="@layout/activity_kategori">
+    tools:context="com.example.huthut.loakonline.Pengepul.DaftarTransaksiActivity"
+    tools:showIn="@layout/activity_daftar_transaksi">
 
     <ListView
-        android:id="@+id/kategori"
+        android:id="@+id/daftarTransaksi"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
 </android.support.constraint.ConstraintLayout>

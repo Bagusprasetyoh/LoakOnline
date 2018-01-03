@@ -1,4 +1,4 @@
-package com.example.huthut.loakonline;
+package com.example.huthut.loakonline.Penjual;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.huthut.loakonline.Class.Status;
+import com.example.huthut.loakonline.R;
 
 import java.util.List;
 

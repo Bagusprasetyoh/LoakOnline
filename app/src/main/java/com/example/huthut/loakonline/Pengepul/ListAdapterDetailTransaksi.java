@@ -1,4 +1,4 @@
-package com.example.huthut.loakonline;
+package com.example.huthut.loakonline.Pengepul;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,31 +8,31 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.huthut.loakonline.Class.Kategori;
+import com.example.huthut.loakonline.Class.DetailTransaksi;
+import com.example.huthut.loakonline.R;
 
 import java.util.List;
 
 /**
- * Created by Huthut on 12/10/2017.
+ * Created by Huthut on 1/2/2018.
  */
 
-public class ListViewAdapter extends ArrayAdapter<Kategori> {
+public class ListAdapterDetailTransaksi extends ArrayAdapter<DetailTransaksi> {
 
     Context mContext;
     int layoutResourceId;
-    private List<Kategori> data;
+    private List<DetailTransaksi> data;
+    //private DaftarBarangActivity daftar;
 
-    public ListViewAdapter(Context mContext, int layoutResourceId, List<Kategori> data) {
-
+    public ListAdapterDetailTransaksi(Context mContext, int layoutResourceId, List<DetailTransaksi> data) {
         super(mContext, layoutResourceId, data);
-
         this.layoutResourceId = layoutResourceId;
         this.mContext = mContext;
         this.data = data;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         /*
          * The convertView argument is essentially a "ScrapView" as described is Lucas post
@@ -47,12 +47,14 @@ public class ListViewAdapter extends ArrayAdapter<Kategori> {
         }
 
         // object item based on the position
-        Kategori kategori = data.get(position);
+        final DetailTransaksi loak = data.get(position);
 
-        // get the TextView and then set the text (item name) and tag (item ID) values
-        TextView textViewItem = (TextView) convertView.findViewById(R.id.textViewItem);
-        textViewItem.setText(kategori.getNamaKategori());
-        textViewItem.setTag(kategori.getId());
+        TextView textView2 = (TextView) convertView.findViewById(R.id.nama_produk);
+        textView2.setText(loak.getNama_produk());
+
+        TextView textView4 = (TextView) convertView.findViewById(R.id.harga);
+        textView4.setText(Integer.toString(loak.getHarga_standar()));
+
 
         return convertView;
 

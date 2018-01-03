@@ -20,24 +20,28 @@
 
         <service
             android:name=".FetchAddressIntentService"
-            android:exported="false"/>
+            android:exported="false" />
 
-    <activity android:name=".MainActivity" />
-    <activity android:name=".LoginActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Penjual.MainActivity" />
+        <activity android:name=".Penjual.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-    <activity
-        android:name=".DaftarBarangActivity"
-        android:theme="@style/AppTheme" />
-    <activity
-        android:name=".KategoriActivity"
-        android:theme="@style/AppTheme" />
-    <activity android:name=".PilihJadwalActivity" />
-    <activity android:name=".CariActivity"></activity>
-</application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Penjual.DaftarBarangActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Penjual.KategoriActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Penjual.PilihJadwalActivity" />
+        <activity android:name=".Penjual.CariActivity" />
+        <activity android:name=".Pengepul.HomePengepulActivity" />
+        <activity android:name=".Pengepul.EditBeratActivity" />
+        <activity android:name=".Pengepul.DaftarTransaksiActivity" />
+        <activity android:name=".Pengepul.TambahJadwalActivity"></activity>
+    </application>
 
 </manifest>

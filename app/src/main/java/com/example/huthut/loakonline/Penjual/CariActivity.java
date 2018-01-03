@@ -1,4 +1,4 @@
-package com.example.huthut.loakonline;
+package com.example.huthut.loakonline.Penjual;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.huthut.loakonline.Class.Barang_loak;
+import com.example.huthut.loakonline.R;
 import com.example.huthut.loakonline.helper.SQLiteHandler;
 
 import org.json.JSONArray;
@@ -47,7 +47,6 @@ public class CariActivity extends AppCompatActivity {
                         JSONObject result = new JSONObject(response);
                         JSONArray array  = result.getJSONArray("pengepul");
                         Toast.makeText(CariActivity.this, "Berhasil", Toast.LENGTH_SHORT).show();
-
                     }
                 } catch (JSONException e1) {
                     e1.printStackTrace();
