@@ -54,7 +54,6 @@ public class DaftarBarangActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(DaftarBarangActivity.this, KategoriActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

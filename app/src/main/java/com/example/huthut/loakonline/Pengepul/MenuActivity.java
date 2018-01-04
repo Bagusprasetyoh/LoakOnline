@@ -18,6 +18,7 @@ public class MenuActivity extends AppCompatActivity {
 
         Button btnTransaksi = (Button) findViewById(R.id.btnTransaksi);
         Button btnJadwal = (Button) findViewById(R.id.btnJadwal);
+        Button btnStok = (Button) findViewById(R.id.btnStok);
 
         btnTransaksi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,14 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, TambahJadwalActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnStok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, StokActivity.class);
                 startActivity(intent);
             }
         });

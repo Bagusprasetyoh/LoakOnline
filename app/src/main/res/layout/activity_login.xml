@@ -6,27 +6,24 @@
     android:layout_height="match_parent"
     tools:context="com.example.huthut.loakonline.Penjual.LoginActivity">
 
+
     <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg"/>
-
+        app:srcCompat="@drawable/back" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#5fffffff"></View>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
         android:padding="16dp"
-        android:background="#788b8b8b">
-
-        <EditText
-            android:id="@+id/edtUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="username"
-            android:inputType="textPersonName" />
+        >
 
         <!--<android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -39,12 +36,38 @@
                 android:hint="password"
                 android:inputType="textPassword" />
         </android.support.design.widget.TextInputLayout>-->
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="207dp"
+            android:layout_height="108dp"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="209dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/logo2" />
+
+        <EditText
+            android:id="@+id/edtUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint=" username"
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:drawableLeft="@drawable/ic_action_user"/>
+
         <EditText
             android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="password"
+            android:hint=" password"
+            android:textColor="#FFFFFF"
+            android:drawableLeft="@drawable/ic_action_name"
             android:inputType="textPassword" />
 
         <Spinner
@@ -62,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:background="@drawable/bg_rectangle"
+
+            android:background="@color/LimeGreen"
             android:layout_margin="5dp" />
 
         <Button
@@ -70,9 +94,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Registrasi"
-            android:background="@drawable/bg_regis"
+
+            android:background="@color/DodgerBlue"
             android:layout_margin="5dp" />
 
     </LinearLayout>
+
+
 
 </RelativeLayout>
