@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/LemonChiffon">
 
 
     <LinearLayout
@@ -9,7 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/LemonChiffon">
 
         <TextView
             android:id="@+id/nama_produk"
@@ -17,9 +19,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_weight="1"
-            android:paddingLeft="16dp"
+            android:paddingLeft="20dp"
             android:text="Item name here..."
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@color/FloralWhite"
+            android:clickable="false"
+            android:elevation="4dp"
+            android:padding="20dp"/>
 
         <TextView
             android:id="@+id/harga"
@@ -27,9 +34,14 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:paddingLeft="16dp"
+            android:paddingLeft="20dp"
             android:text="Item name here..."
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@color/FloralWhite"
+            android:clickable="false"
+            android:elevation="4dp"
+            android:padding="20dp"/>
 
 
     </LinearLayout>

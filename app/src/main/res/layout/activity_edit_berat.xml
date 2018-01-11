@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/LemonChiffon"
     tools:context="com.example.huthut.loakonline.Pengepul.EditBeratActivity">
 
 
@@ -20,8 +21,9 @@
         android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#29a749"
+        android:background="@color/LimeGreen"
         android:text="Transaksi Fix"
+        android:textColor="@color/White"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"

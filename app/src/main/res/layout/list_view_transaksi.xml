@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/LemonChiffon">
 
     <LinearLayout
         android:id="@+id/lin"
+        android:layout_below="@+id/iiid"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/LemonChiffon">
 
         <TextView
             android:id="@+id/id_transaksi"
@@ -17,16 +23,28 @@
             android:layout_alignParentTop="true"
             android:layout_weight="1"
             android:text="id transaksi"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@color/FloralWhite"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:paddingLeft="24dp"/>
 
         <TextView
             android:id="@+id/nama_penjual"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_weight="1"
             android:text="nama penjual"
             android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@color/FloralWhite"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:paddingLeft="24dp"
             />
 
         <TextView
@@ -35,8 +53,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_weight="1"
-            android:text="id transaksi"
-            android:textSize="15dp" />
+            android:text="alamat"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@color/FloralWhite"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:paddingLeft="24dp"/>
 
         <TextView
             android:id="@+id/waktu_order"
@@ -44,27 +68,45 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_weight="1"
-            android:text="id transaksi"
-            android:textSize="15dp" />
+            android:text="waktu order"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@color/FloralWhite"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:paddingLeft="24dp"/>
 
         <TextView
             android:id="@+id/no_telp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_weight="1"
             android:text="no telp"
             android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@color/FloralWhite"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:paddingLeft="24dp"
             />
 
         <TextView
             android:id="@+id/jam"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_weight="1"
-            android:text="no telp"
+            android:text="jam"
             android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@color/FloralWhite"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:padding="20dp"
+            android:paddingLeft="24dp"
             />
 
     </LinearLayout>

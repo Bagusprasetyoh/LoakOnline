@@ -12,13 +12,9 @@ import android.widget.Spinner;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.huthut.loakonline.Class.Jadwal;
-import com.example.huthut.loakonline.Penjual.CariActivity;
-import com.example.huthut.loakonline.Penjual.DaftarBarangActivity;
-import com.example.huthut.loakonline.Penjual.DetailPengepulActivity;
+import com.example.huthut.loakonline.Class.List_jadwal;
 import com.example.huthut.loakonline.Penjual.JadwalAdapter;
 import com.example.huthut.loakonline.Penjual.JadwalRequest;
-import com.example.huthut.loakonline.Penjual.PilihJadwalActivity;
 import com.example.huthut.loakonline.R;
 import com.example.huthut.loakonline.helper.SQLiteHandler;
 
@@ -33,7 +29,7 @@ public class TambahJadwalActivity extends AppCompatActivity {
     private Spinner spnHari;
     private Spinner spnWaktu;
     private Button btnOK;
-    private ArrayList<Jadwal> listJadwal;
+    private ArrayList<List_jadwal> listListjadwal;
     private JadwalAdapter adapter;
     private SQLiteHandler db;
 
@@ -45,7 +41,7 @@ public class TambahJadwalActivity extends AppCompatActivity {
         spnHari = (Spinner) findViewById(R.id.spnHari);
         spnWaktu = (Spinner) findViewById(R.id.spnWaktu);
         btnOK = (Button) findViewById(R.id.btnOK);
-        listJadwal = new ArrayList<>();
+        listListjadwal = new ArrayList<>();
         db = new SQLiteHandler(getApplicationContext());
 
         spinnerHari();
@@ -58,7 +54,7 @@ public class TambahJadwalActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                final Jadwal jadwal = (Jadwal) spnWaktu.getSelectedItem();
+                final List_jadwal listjadwal = (List_jadwal) spnWaktu.getSelectedItem();
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
                     @Override
                     public void onResponse(String response) {
@@ -82,7 +78,7 @@ public class TambahJadwalActivity extends AppCompatActivity {
                 HashMap<String, String> user = db.getUserDetails();
                 String uid = user.get("uid");
 
-                TambahJadwalRequest jdwRequest = new TambahJadwalRequest(uid, jadwal.getId(), responseListener);
+                TambahJadwalRequest jdwRequest = new TambahJadwalRequest(uid, listjadwal.getId(), responseListener);
                 RequestQueue queue = Volley.newRequestQueue(TambahJadwalActivity.this);
                 queue.add(jdwRequest);
             }
@@ -103,9 +99,9 @@ public class TambahJadwalActivity extends AppCompatActivity {
         spnHari.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                listJadwal.clear();
-                Jadwal jad = new Jadwal("0", "", "", "Pilih Jadwal - ");
-                listJadwal.add(jad);
+                listListjadwal.clear();
+                List_jadwal jad = new List_jadwal("0", "", "", "Pilih List_jadwal - ");
+                listListjadwal.add(jad);
                 spnWaktu.setSelection(0);
                 spinnerWaktu();
             }
@@ -128,9 +124,9 @@ public class TambahJadwalActivity extends AppCompatActivity {
                         JSONObject result = new JSONObject(response);
                         JSONArray array  = result.getJSONArray("jadwal");
 
-                        listJadwal.clear();
-                        Jadwal jad = new Jadwal("0", "", "", "Pilih Jadwal - ");
-                        listJadwal.add(jad);
+                        listListjadwal.clear();
+                        List_jadwal jad = new List_jadwal("0", "", "", "Pilih List_jadwal - ");
+                        listListjadwal.add(jad);
 
                         for(int i=0;i<array.length();i++) {
                             JSONObject catObj = array.getJSONObject(i);
@@ -138,13 +134,13 @@ public class TambahJadwalActivity extends AppCompatActivity {
                             String hari2 = catObj.getString("hari");
                             String jamB = catObj.getString("jam_buka");
                             String jamT = catObj.getString("jam_tutup");
-                            Jadwal jdw = new Jadwal(id, hari2, jamB, jamT);
-                            listJadwal.add(jdw);
+                            List_jadwal jdw = new List_jadwal(id, hari2, jamB, jamT);
+                            listListjadwal.add(jdw);
                         }
 
                         adapter = new JadwalAdapter(TambahJadwalActivity.this,
                                 R.layout.support_simple_spinner_dropdown_item,
-                                listJadwal);
+                                listListjadwal);
                         spnWaktu.setAdapter(adapter);
                         spnWaktu.setSelection(0);
                     }

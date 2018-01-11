@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.huthut.loakonline.Class.Jadwal;
 import com.example.huthut.loakonline.R;
 
 public class DetailPengepulActivity extends AppCompatActivity {

@@ -8,8 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.huthut.loakonline.Class.Stok;
-import com.example.huthut.loakonline.Class.Transaksi;
+import com.example.huthut.loakonline.Class.Produk_gundang;
 import com.example.huthut.loakonline.R;
 
 import java.util.List;
@@ -18,13 +17,13 @@ import java.util.List;
  * Created by Huthut on 1/4/2018.
  */
 
-public class ListAdapterStok extends ArrayAdapter<Stok> {
+public class ListAdapterStok extends ArrayAdapter<Produk_gundang> {
 
     Context mContext;
     int layoutResourceId;
-    private List<Stok> data;
+    private List<Produk_gundang> data;
 
-    public ListAdapterStok(Context mContext, int layoutResourceId, List<Stok> data) {
+    public ListAdapterStok(Context mContext, int layoutResourceId, List<Produk_gundang> data) {
         super(mContext, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.mContext = mContext;
@@ -47,7 +46,7 @@ public class ListAdapterStok extends ArrayAdapter<Stok> {
         }
 
         // object item based on the position
-        final Stok gudang = data.get(position);
+        final Produk_gundang gudang = data.get(position);
 
         // get the TextView and then set the text (item name) and tag (item ID) values
         TextView txtNama = (TextView) convertView.findViewById(R.id.textViewItem);

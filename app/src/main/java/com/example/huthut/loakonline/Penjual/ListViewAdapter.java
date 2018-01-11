@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.huthut.loakonline.Class.Kategori;
+import com.example.huthut.loakonline.Class.Kategori_produk;
 import com.example.huthut.loakonline.R;
 
 import java.util.List;
@@ -17,13 +17,13 @@ import java.util.List;
  * Created by Huthut on 12/10/2017.
  */
 
-public class ListViewAdapter extends ArrayAdapter<Kategori> {
+public class ListViewAdapter extends ArrayAdapter<Kategori_produk> {
 
     Context mContext;
     int layoutResourceId;
-    private List<Kategori> data;
+    private List<Kategori_produk> data;
 
-    public ListViewAdapter(Context mContext, int layoutResourceId, List<Kategori> data) {
+    public ListViewAdapter(Context mContext, int layoutResourceId, List<Kategori_produk> data) {
 
         super(mContext, layoutResourceId, data);
 
@@ -48,12 +48,12 @@ public class ListViewAdapter extends ArrayAdapter<Kategori> {
         }
 
         // object item based on the position
-        Kategori kategori = data.get(position);
+        Kategori_produk kategoriProduk = data.get(position);
 
         // get the TextView and then set the text (item name) and tag (item ID) values
         TextView textViewItem = (TextView) convertView.findViewById(R.id.textViewItem);
-        textViewItem.setText(kategori.getNamaKategori());
-        textViewItem.setTag(kategori.getId());
+        textViewItem.setText(kategoriProduk.getNamaKategori());
+        textViewItem.setTag(kategoriProduk.getId());
 
         return convertView;
 

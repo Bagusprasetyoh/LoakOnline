@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="10dp" >
+    android:padding="10dp"
+    android:background="@color/LemonChiffon">
 
     <TextView
         android:id="@+id/textViewItem"
@@ -9,6 +10,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:text="Item name here..."
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:background="@color/FloralWhite"
+        android:elevation="4dp"
+        android:padding="20dp"
+        android:paddingLeft="24dp"/>
 
 </RelativeLayout>

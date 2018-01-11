@@ -12,7 +12,7 @@ import android.widget.ListView;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.huthut.loakonline.Class.Barang_loak;
+import com.example.huthut.loakonline.Class.Produk;
 import com.example.huthut.loakonline.R;
 import com.example.huthut.loakonline.helper.SQLiteHandler;
 
@@ -27,7 +27,7 @@ import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
 public class DaftarBarangActivity extends AppCompatActivity {
-    private ArrayList<Barang_loak> listDaftarBarang;
+    private ArrayList<Produk> listDaftarBarang;
     private ListView list;
     private ListViewAdapterBarang adapter;
     private SQLiteHandler db;
@@ -87,7 +87,7 @@ public class DaftarBarangActivity extends AppCompatActivity {
                             String id = catObj.getString("id_detail_transaksi");
                             String produk = catObj.getString("nama_produk");
                             int harga = Integer.parseInt(catObj.getString("harga_standar"));
-                            Barang_loak loak = new Barang_loak(id, produk, harga);
+                            Produk loak = new Produk(id, produk, harga);
                             listDaftarBarang.add(loak);
                         }
 

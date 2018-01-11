@@ -1,35 +1,31 @@
 package com.example.huthut.loakonline.Penjual;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.huthut.loakonline.Class.Jadwal;
+import com.example.huthut.loakonline.Class.List_jadwal;
 import com.example.huthut.loakonline.R;
 
 import java.util.List;
-
-import static java.lang.Boolean.FALSE;
 
 /**
  * Created by Huthut on 12/31/2017.
  */
 
-public class JadwalAdapter extends ArrayAdapter<Jadwal> {
+public class JadwalAdapter extends ArrayAdapter<List_jadwal> {
 
     // Your sent context
     LayoutInflater inflator;
     private Context context;
     // Your custom values for the spinner (User)
-    private List<Jadwal> values;
+    private List<List_jadwal> values;
 
     public JadwalAdapter(Context context, int textViewResourceId,
-                          List<Jadwal> values) {
+                          List<List_jadwal> values) {
         super(context, textViewResourceId, values);
         inflator = LayoutInflater.from(context);
         this.context = context;
@@ -42,7 +38,7 @@ public class JadwalAdapter extends ArrayAdapter<Jadwal> {
     }
 
     @Override
-    public Jadwal getItem(int position){
+    public List_jadwal getItem(int position){
         return values.get(position);
     }
 

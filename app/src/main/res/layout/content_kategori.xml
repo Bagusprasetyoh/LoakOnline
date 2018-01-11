@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.huthut.loakonline.Penjual.KategoriActivity"
-    tools:showIn="@layout/activity_kategori">
+    tools:showIn="@layout/activity_kategori"
+    android:background="@color/LemonChiffon">
 
     <ListView
-        android:id="@+id/kategori"
+        android:id="@+id/kategoriProduk"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </android.support.constraint.ConstraintLayout>

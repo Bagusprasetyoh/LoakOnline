@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.huthut.loakonline.Class.Barang_loak;
+import com.example.huthut.loakonline.Class.Produk;
 import com.example.huthut.loakonline.R;
 
 import java.util.List;
@@ -20,14 +20,14 @@ import static java.lang.Boolean.FALSE;
  * Created by Huthut on 12/17/2017.
  */
 
-public class ListViewAdapterBarang extends ArrayAdapter<Barang_loak> {
+public class ListViewAdapterBarang extends ArrayAdapter<Produk> {
 
     Context mContext;
     int layoutResourceId;
-    private List<Barang_loak> data;
+    private List<Produk> data;
     private DaftarBarangActivity daftar;
 
-    public ListViewAdapterBarang(Context mContext, int layoutResourceId, List<Barang_loak> data) {
+    public ListViewAdapterBarang(Context mContext, int layoutResourceId, List<Produk> data) {
 
         super(mContext, layoutResourceId, data);
 
@@ -52,7 +52,7 @@ public class ListViewAdapterBarang extends ArrayAdapter<Barang_loak> {
         }
 
         // object item based on the position
-        final Barang_loak loak = data.get(position);
+        final Produk loak = data.get(position);
 
         // get the TextView and then set the text (item name) and tag (item ID) values
         TextView textViewItem = (TextView) convertView.findViewById(R.id.textViewItem);

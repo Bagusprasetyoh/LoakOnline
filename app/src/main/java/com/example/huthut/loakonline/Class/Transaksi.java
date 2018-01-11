@@ -6,6 +6,7 @@ package com.example.huthut.loakonline.Class;
 
 public class Transaksi {
     private String id_transaksi;
+    private String id_pengepul;
     private String alamat;
     private String detail_alamat;
     private String jadwal_order;
@@ -14,6 +15,7 @@ public class Transaksi {
     private String no_telp;
     private String jam_buka;
     private String jam_tutup;
+    private int total_harga;
 
     public  Transaksi(String id_transaksi,  String alamat, String detail_alamat, String jadwal_order, String nama_penjual, String no_telp){
         this.id_transaksi = id_transaksi;
@@ -74,5 +76,13 @@ public class Transaksi {
 
     public String getWaktuorder(){
         return waktu_order;
+    }
+
+    public String getId_pengepul(){
+        return id_pengepul;
+    }
+
+    public void setId_pengepul(String id_pengepul){
+        this.id_pengepul = id_pengepul;
     }
 }

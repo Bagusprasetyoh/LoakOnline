@@ -2,21 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/LemonChiffon"
     android:padding="10dp" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/LemonChiffon">
 
-    <TextView
-        android:id="@+id/textViewItem"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="Item name here..."
-        android:textSize="15dp" />
+        <TextView
+            android:id="@+id/textViewItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:text="Item name here..."
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/harga_textview"
@@ -32,6 +34,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@mipmap/ic_delete"
             android:text="Hapus"
             tools:text="Hapus" />
     </LinearLayout>

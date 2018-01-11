@@ -22,7 +22,7 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.huthut.loakonline.Class.Jadwal;
+import com.example.huthut.loakonline.Class.List_jadwal;
 import com.example.huthut.loakonline.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -45,7 +45,7 @@ public class PilihJadwalActivity extends AppCompatActivity implements OnMapReady
     private Spinner spnWaktu;
     private Button btnCari;
     private String hari;
-    private ArrayList<Jadwal> listJadwal;
+    private ArrayList<List_jadwal> listListjadwal;
     private JadwalAdapter adapter;
 
     private static final String[] INITIAL_PERMS={
@@ -83,7 +83,7 @@ public class PilihJadwalActivity extends AppCompatActivity implements OnMapReady
         spnHari = (Spinner) findViewById(R.id.spnHari);
         spnWaktu = (Spinner) findViewById(R.id.spnWaktu);
         btnCari = (Button) findViewById(R.id.btnCari);
-        listJadwal = new ArrayList<>();
+        listListjadwal = new ArrayList<>();
 
         spinnerHari();
         spinnerWaktu();
@@ -102,7 +102,7 @@ public class PilihJadwalActivity extends AppCompatActivity implements OnMapReady
 
             @Override
             public void onClick(View v) {
-                final Jadwal spiner = (Jadwal) spnWaktu.getSelectedItem();
+                final List_jadwal spiner = (List_jadwal) spnWaktu.getSelectedItem();
                 Bundle bundle = new Bundle();
                 bundle.putString("id_jadwal", spiner.getId());
                 bundle.putString("latitude", String.valueOf(center.latitude));
@@ -131,9 +131,9 @@ public class PilihJadwalActivity extends AppCompatActivity implements OnMapReady
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 hari = parent.getItemAtPosition(position).toString();
-                listJadwal.clear();
-                Jadwal jad = new Jadwal("0", "", "", "Pilih Jadwal - ");
-                listJadwal.add(jad);
+                listListjadwal.clear();
+                List_jadwal jad = new List_jadwal("0", "", "", "Pilih List_jadwal - ");
+                listListjadwal.add(jad);
                 spnWaktu.setSelection(0);
                 spinnerWaktu();
             }
@@ -156,9 +156,9 @@ public class PilihJadwalActivity extends AppCompatActivity implements OnMapReady
                         JSONObject result = new JSONObject(response);
                         JSONArray array  = result.getJSONArray("jadwal");
 
-                        listJadwal.clear();
-                        Jadwal jad = new Jadwal("0", "", "", "Pilih Jadwal - ");
-                        listJadwal.add(jad);
+                        listListjadwal.clear();
+                        List_jadwal jad = new List_jadwal("0", "", "", "Pilih List_jadwal - ");
+                        listListjadwal.add(jad);
 
                         for(int i=0;i<array.length();i++) {
                             JSONObject catObj = array.getJSONObject(i);
@@ -166,13 +166,13 @@ public class PilihJadwalActivity extends AppCompatActivity implements OnMapReady
                             String hari2 = catObj.getString("hari");
                             String jamB = catObj.getString("jam_buka");
                             String jamT = catObj.getString("jam_tutup");
-                            Jadwal jdw = new Jadwal(id, hari2, jamB, jamT);
-                            listJadwal.add(jdw);
+                            List_jadwal jdw = new List_jadwal(id, hari2, jamB, jamT);
+                            listListjadwal.add(jdw);
                         }
 
                         adapter = new JadwalAdapter(PilihJadwalActivity.this,
                                 R.layout.support_simple_spinner_dropdown_item,
-                                listJadwal);
+                                listListjadwal);
                         spnWaktu.setAdapter(adapter);
                         spnWaktu.setSelection(0);
                     }
@@ -251,13 +251,10 @@ public class PilihJadwalActivity extends AppCompatActivity implements OnMapReady
                     strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
                 }
                 strAdd = strReturnedAddress.toString();
-                Log.w("My Current loction address", strReturnedAddress.toString());
             } else {
-                Log.w("My Current loction address", "No Address returned!");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            Log.w("My Current loction address", "Canont get Address!");
         }
         return strAdd;
     }

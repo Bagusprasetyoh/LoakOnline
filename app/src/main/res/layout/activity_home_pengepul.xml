@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/LemonChiffon"
     android:orientation="vertical"
     tools:context="com.example.huthut.loakonline.Pengepul.HomePengepulActivity">
 
@@ -45,16 +46,18 @@
 
             <Button
                 android:id="@+id/terima"
-                android:background="#29a749"
+                android:background="@color/LimeGreen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ya, Saya Beli" />
+                android:text="Ya, Saya Beli"
+                android:textColor="@color/White"/>
 
             <Button
                 android:id="@+id/tolak"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tolak" />
+                android:text="Tolak"
+                android:textColor="@color/White"/>
         </LinearLayout>
     </FrameLayout>
 

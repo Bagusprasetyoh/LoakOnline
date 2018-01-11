@@ -4,78 +4,181 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/LemonChiffon"
     tools:context="com.example.huthut.loakonline.Penjual.DetailPengepulActivity">
-
-    <Button
-        android:id="@+id/okey"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:text="OK" />
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/header_cover_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"/>
+
+        <ImageButton
+            android:id="@+id/user_profile_photo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:background="@mipmap/ic_profile2"
+            android:elevation="5dp"
+            android:padding="20dp"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/user_profile_photo"
+            android:layout_marginTop="81dp"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            android:paddingBottom="24dp">
+
+
+            <TextView
+                android:id="@+id/user_profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="52dp"
+                android:text="SELAMAT!"
+                android:textColor="#fff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/user_profile_short_bio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_profile_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text="Anda Mendapatkan Pembeli !"
+                android:textColor="#fff"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/profile_layout"
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/l1"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:orientation="horizontal">
             <TextView
-                android:id="@+id/textnama"
-                android:layout_width="wrap_content"
+                android:id="@+id/txtnama1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/FloralWhite"
+                android:clickable="false"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:paddingLeft="24dp"
                 android:text="Nama" />
 
             <TextView
                 android:id="@+id/textnama2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="3"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                android:paddingLeft="24dp"/>
+                android:layout_margin="5dp"
+                android:background="@color/FloralWhite"
+                android:clickable="false"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:paddingLeft="24dp"
+                android:text="Nama" />
         </LinearLayout>
 
+
         <LinearLayout
-            android:id="@+id/l2"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:orientation="horizontal">
             <TextView
-                android:id="@+id/textalamat"
-                android:layout_width="wrap_content"
+                android:id="@+id/txtalamat2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/FloralWhite"
+                android:clickable="false"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:paddingLeft="24dp"
                 android:text="Alamat" />
 
             <TextView
                 android:id="@+id/textalamat2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="3"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                android:paddingLeft="24dp"/>
+                android:layout_margin="5dp"
+                android:background="@color/FloralWhite"
+                android:clickable="false"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:paddingLeft="24dp"
+                android:text="Alamat" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:orientation="horizontal">
+
             <TextView
-                android:id="@+id/textno"
-                android:layout_width="wrap_content"
+                android:id="@+id/txtno2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="No Telepon" />
+                android:layout_margin="5dp"
+                android:background="@color/FloralWhite"
+                android:clickable="false"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:paddingLeft="24dp"
+                android:text="No Telp" />
 
             <TextView
                 android:id="@+id/textno2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="3"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                android:paddingLeft="24dp"/>
+                android:layout_margin="5dp"
+                android:background="@color/FloralWhite"
+                android:clickable="false"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:paddingLeft="24dp"
+                android:text="Telp" />
         </LinearLayout>
+
     </LinearLayout>
 
+        <Button
+            android:id="@+id/okey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="bottom"
+            android:background="@color/LimeGreen"
+            android:layout_marginBottom="17dp"
+            android:text="OK"
+            android:textColor="@color/White"/>
+    </RelativeLayout>
 </FrameLayout>

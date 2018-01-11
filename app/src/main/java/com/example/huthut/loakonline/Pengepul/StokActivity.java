@@ -8,8 +8,7 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.huthut.loakonline.Class.Stok;
-import com.example.huthut.loakonline.Class.Transaksi;
+import com.example.huthut.loakonline.Class.Produk_gundang;
 import com.example.huthut.loakonline.R;
 import com.example.huthut.loakonline.helper.SQLiteHandler;
 
@@ -22,7 +21,7 @@ import java.util.HashMap;
 
 public class StokActivity extends AppCompatActivity {
     private SQLiteHandler db;
-    private ArrayList<Stok> listStok;
+    private ArrayList<Produk_gundang> listProdukgundang;
     private ListView list;
     private ListAdapterStok adapter;
 
@@ -31,7 +30,7 @@ public class StokActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stok);
         db = new SQLiteHandler(getApplicationContext());
-        listStok = new ArrayList<>();
+        listProdukgundang = new ArrayList<>();
         list = (ListView) findViewById(R.id.listStok);
 
         ambilStok();
@@ -57,13 +56,13 @@ public class StokActivity extends AppCompatActivity {
                             String nama = catObj.getString("nama_produk_gudang");
                             String stok = catObj.getString("total_stok");
 
-                            Stok gudang = new Stok(id, nama, Integer.parseInt(stok));
-                            listStok.add(gudang);
+                            Produk_gundang gudang = new Produk_gundang(id, nama, Integer.parseInt(stok));
+                            listProdukgundang.add(gudang);
                         }
 
                         adapter = new ListAdapterStok(StokActivity.this,
                                 R.layout.list_view_stok,
-                                listStok);
+                                listProdukgundang);
                         list.setAdapter(adapter);
                     }
                 } catch (JSONException e1) {

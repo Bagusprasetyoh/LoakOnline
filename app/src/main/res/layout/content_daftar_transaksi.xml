@@ -11,6 +11,7 @@
     <ListView
         android:id="@+id/daftarTransaksi"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/LemonChiffon"/>
 
 </android.support.constraint.ConstraintLayout>

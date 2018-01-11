@@ -13,6 +13,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
@@ -20,7 +21,7 @@
 
         <service
             android:name=".FetchAddressIntentService"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity android:name=".Penjual.MainActivity" />
         <activity android:name=".Penjual.LoginActivity">
@@ -36,7 +37,7 @@
         <activity
             android:name=".Penjual.KategoriActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Penjual.PilihJadwalActivity" />
+        <activity android:name=".Penjual.PilihJadwalActivity"/>
         <activity android:name=".Penjual.CariActivity" />
         <activity android:name=".Pengepul.HomePengepulActivity" />
         <activity android:name=".Pengepul.EditBeratActivity" />

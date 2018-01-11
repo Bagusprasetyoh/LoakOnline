@@ -19,7 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_margin="4dp"
-        android:background="@drawable/bg_rectangle"
-        android:text="Cari" />
+        android:background="@color/LimeGreen"
+        android:text="Pilih Jadwal Bertemu"
+        android:textColor="@color/White"/>
 
 </FrameLayout>

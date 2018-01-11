@@ -11,7 +11,7 @@ import android.widget.ListView;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.huthut.loakonline.Class.Kategori;
+import com.example.huthut.loakonline.Class.Kategori_produk;
 import com.example.huthut.loakonline.R;
 import com.example.huthut.loakonline.helper.SQLiteHandler;
 import com.example.huthut.loakonline.helper.SessionManager;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class KategoriActivity extends AppCompatActivity {
-    private ArrayList<Kategori> listKategori;
+    private ArrayList<Kategori_produk> listKategoriProduk;
     private ListView list;
     private ListViewAdapter adapter;
     private SQLiteHandler db;
@@ -37,8 +37,8 @@ public class KategoriActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        list = (ListView) findViewById(R.id.kategori);
-        listKategori = new ArrayList<>();
+        list = (ListView) findViewById(R.id.kategoriProduk);
+        listKategoriProduk = new ArrayList<>();
 
         GetKategori();
         pilihKategori();
@@ -63,13 +63,13 @@ public class KategoriActivity extends AppCompatActivity {
                             JSONObject catObj = array.getJSONObject(i);
                             String id = catObj.getString("id_produk");
                             String kategor = catObj.getString("nama_produk");
-                            Kategori cat = new Kategori(id, kategor);
-                            listKategori.add(cat);
+                            Kategori_produk cat = new Kategori_produk(id, kategor);
+                            listKategoriProduk.add(cat);
                         }
 
                         adapter = new ListViewAdapter(KategoriActivity.this,
                                 R.layout.list_view_row_item,
-                                listKategori);
+                                listKategoriProduk);
                         list.setAdapter(adapter);
                     }
                 } catch (JSONException e1) {
@@ -88,7 +88,7 @@ public class KategoriActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 final String id_produk;
 
-                id_produk = String.valueOf(listKategori.get(i).getId());
+                id_produk = String.valueOf(listKategoriProduk.get(i).getId());
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
                     @Override
                     public void onResponse(String response) {
